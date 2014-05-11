@@ -2,7 +2,7 @@
 f<-fread("household_power_consumption.txt", header = TRUE, select = 1)       #read the data with data.table functions
 
 
-data<-(which(f$Date %in% c("1/2/2007", "2/2/2007")      #select data from 1/2/2007 to 2/2/2007
+data<-(which(f$Date %in% c("1/2/2007", "2/2/2007")))      #select data from 1/2/2007 to 2/2/2007
              
 s<- min(data)            #take info about the 
 k<- length(data)         #length of the object created

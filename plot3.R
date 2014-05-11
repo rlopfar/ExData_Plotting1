@@ -2,7 +2,7 @@
 f<-fread("household_power_consumption.txt", header = TRUE, select = 1)       #read the data with data.table functions
 
 
-data<-(which(f$Date %in% c("1/2/2007", "2/2/2007")      #select data from 1/2/2007 to 2/2/2007
+data<-(which(f$Date %in% c("1/2/2007", "2/2/2007")))
              
 s<- min(data)            #take info about the 
 k<- length(data)         #length of the object created
@@ -23,7 +23,7 @@ png('plot3.png')          #standard way to save a plot as png
 plot(xy,data2[,7],type="l",ylab="Energy sub metering",xlab="")     #set plot with the format required
 lines(xy,data2[,8],col="red")            #set aditional line
 lines(xy,data2[,9],col="blue")           #set aditional line
-legend("topright", legend=c("Sub_metering_1", "Sub_metering_1", "Sub_metering_1"),  #legend
-       lwd=1, col=c("black", "red", "blue"))
+legend("topright", legend=c("Sub_metering_1", "Sub_metering_1", "Sub_metering_1"),
+       lwd=1, col=c("black", "red", "blue"))   #legend
 dev.off()
 
